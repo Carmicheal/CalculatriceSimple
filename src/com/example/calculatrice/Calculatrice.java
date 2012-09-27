@@ -8,10 +8,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Calculatrice extends Activity {
-	static int operation;
+public class Calculatrice extends Activity { //! la classe Calculatrice est une calculatrice simple sur Android ==> Description breve.
+	static int operation; //! sert a contenir le type d'operations a effectuer ==> Description breve.
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    //! onCreate sert a creer l'application android ==> Description breve.
+    public void onCreate(Bundle savedInstanceState) { 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
@@ -21,26 +22,32 @@ public class Calculatrice extends Activity {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
     }
- 
-    public void addition(View v){
+    //! La fonction addition permet de faire une addition lors du clique sur "+" ==> Description breve.
+    /*! \param v La vue Android */
+    public void addition(View v){ 
     	operation = 0;
     }
-    
-    public void soustraction(View v){
+    //! La fonction soustraction permet de faire une soustraction lors du clique sur "-" ==> Description breve.
+    /*! \param v La vue Android */
+    public void soustraction(View v){ 
     	operation = 1;
     }
-    
-    public void multiplication(View v){
+    //! La fonction multiplication permet de faire une multiplication lors du clique sur "*" ==> Description breve.
+    /*! \param v La vue Android */
+    public void multiplication(View v){ 
     	operation = 2;
     }
-    
-    public void division(View v){
+    //! La fonction division permet de faire une division lors du clique sur "/" ==> Description breve.
+    /*! \param v La vue Android */
+    public void division(View v){ 
     	operation = 3;
     }
-    
-    public void resultat(View v){
+    //! La fonction resultats permet de faire le calcul lors du clique sur "=", la fonction effectue le calcul puis l'affiche dans un TextView ==> Description breve.
+    /*! On recupere les informations contenues dans les champs textes, puis on les converties en String afin de les convertir en integer par la suite. ==> Description complete.
+    \param v La vue Android */
+    public void resultat(View v){ 
     	EditText t = (EditText)findViewById(R.id.editText1);
-    	String aString = t.getText().toString();
+    	String aString = t.getText().toString(); 
     	int a = Integer.parseInt(aString);
     	
     	EditText t2 = (EditText)findViewById(R.id.editText2);
@@ -48,7 +55,7 @@ public class Calculatrice extends Activity {
     	int b = Integer.parseInt(bString);
     	
     	
-    	int reponse;
+    	int reponse; //! sert a  contenir le resultat de l'operation ==> Description breve.
     	switch(operation){
     						case 0 : reponse = (a+b);
     									break;
